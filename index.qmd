@@ -167,20 +167,4 @@ We study how newspaper narratives shape public beliefs and policy preferences du
 [**Research Associate**, project "Inflation Narratives in Large Text Corpora," led by Prof. Dr. Ulrich Fritsche and Prof. Dr. Ricardo Usbeck [Funded by the Federal Ministry of Education and Research (BMBF) and the Free and Hanseatic City of Hamburg under the Excellence Strategy of the Federal Government and the Länder]{.cv-detail}]{.cv-what}
 :::
 
-::: {.cv-entry}
-[12/2020 – 09/2022]{.cv-date}
-[**Student Research Assistant**, Chair of Prof. Dr. Ulrich Fritsche, Department of Socioeconomics, University of Hamburg]{.cv-what}
-:::
-
-::: {.cv-entry}
-[01/2021 – 12/2021]{.cv-date}
-[**Student Assistant**, Chair of Prof. Dr. Henning Lohmann (Sociology, esp. Social Research), Department of Socioeconomics, University of Hamburg]{.cv-what}
-:::
-
-::: {.cv-entry}
-[11/2019 – 01/2021]{.cv-date}
-[**Student Research Assistant**, Gambling Research group of Dr. Ingo Fiedler, Department of Socioeconomics, University of Hamburg]{.cv-what}
-:::
-:::
-
 :::
