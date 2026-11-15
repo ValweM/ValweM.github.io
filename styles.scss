@@ -1,0 +1,273 @@
+/*-- scss:defaults --*/
+// A blend of two styles:
+//  - k-wittwer.com: teal / navy / orange palette, light Heebo type, split-screen opening
+//  - chloedemeulenaer.github.io: one-page academic layout, big serif section
+//    headings, dark navbar, small pill buttons that reveal abstracts
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&family=Platypi:wght@500;600;700&display=swap');
+
+$teal:   #A8DADC;   // hero panel, footer
+$navy:   #1E3E62;   // navbar, headings, links, pills
+$ink:    #26313d;   // body text
+$orange: #FF6500;   // name, accents, icons
+$paper:  #ffffff;   // page background below the hero
+
+$body-bg: $paper;
+$body-color: $ink;
+$primary: $navy;
+$link-color: $navy;
+$font-family-sans-serif: "Heebo", "Helvetica Neue", Arial, sans-serif;
+$headings-font-family: "Platypi", Georgia, serif;
+$headings-font-weight: 600;
+$headings-color: $navy;
+$font-weight-base: 300;
+$navbar-bg: $navy;
+$navbar-fg: #ffffff;
+$navbar-hl: $orange;
+$footer-bg: $teal;
+$footer-fg: $navy;
+
+/*-- scss:rules --*/
+body { font-size: 1.05rem; line-height: 1.7; font-weight: 300; }
+strong, b { font-weight: 500; }
+
+a {
+  text-decoration: underline;
+  text-decoration-color: rgba($orange, .6);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  &:hover { color: $orange; }
+}
+
+/* ---------- navbar: dark bar, name in orange, lowercase links ---------- */
+#quarto-header.headroom--unpinned { transform: none !important; }
+.navbar {
+  background: $navy;
+  box-shadow: none;
+  border: none;
+  padding: .45rem 1.6rem;
+  .navbar-brand, .navbar-title {
+    font-family: "Platypi", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.45rem;
+    color: $orange !important;
+    text-decoration: none;
+  }
+  .nav-link {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #fff !important;
+    text-decoration: none;
+    padding: .2rem .7rem !important;
+    &:hover { color: $orange !important; }
+  }
+  .navbar-toggler { border: none; color: #fff; }
+}
+
+/* ---------- page container ---------- */
+#quarto-content { padding: 0; }
+main.content { max-width: none; margin: 0; padding: 0; }
+.page-section, #about { scroll-margin-top: 4.5rem; }
+
+/* ---------- hero: teal info panel + black-and-white photo ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: $teal;
+}
+.hero-photo {
+  order: -1;            // photo on top on phones
+  min-height: 45vh;
+  background-size: cover;
+  background-position: center 25%;
+}
+.hero-text {
+  padding: 2.5rem 1.6rem 3rem;
+  color: $ink;
+  .hero-name {
+    font-family: "Platypi", Georgia, serif;
+    font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.02;
+    color: $orange;
+    margin: 0 0 1.2rem;
+  }
+  .meta {
+    margin-bottom: 1.5rem;
+    p { margin: 0 0 .3rem; font-size: .95rem; color: $navy; }
+    .bi { color: $orange; margin-right: .45rem; }
+  }
+  > p { max-width: 34rem; }
+  .market {
+    font-weight: 500;
+    color: $navy;
+    margin-top: 1.2rem;
+  }
+}
+@media (min-width: 992px) {
+  .hero {
+    grid-template-columns: 3fr 2fr;            // photo takes 40% of the width (was 1fr 1fr = 50%)
+    min-height: calc(100vh - 3.6rem);
+  }
+  .hero-text {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;   // name sits low, like the k-wittwer opening
+    padding: 3rem 4rem 4.5rem;
+  }
+  .hero-photo {
+    order: 2;
+    align-self: center;                        // centre the photo vertically
+    height: 75vh;                              // photo height; lower = smaller
+    min-height: 0;
+    margin: 0 3.5rem 0 0;                      // teal space on the right
+    border-radius: 8px;                        // rounded corners
+    box-shadow: 0 12px 30px rgba(30, 62, 98, .18);   // soft shadow for a framed look
+  }
+}
+/* ---------- pills (cv download, paper links, abstract toggles) ---------- */
+.pill, details > summary {
+  display: inline-block;
+  font-family: $font-family-sans-serif;
+  font-size: .85rem;
+  font-weight: 400;
+  line-height: 1.4;
+  padding: .3rem 1rem;
+  border-radius: 2rem;
+  border: 1.5px solid $navy;
+  background: $navy;
+  color: #fff !important;
+  text-decoration: none;
+  transition: background .2s, border-color .2s;
+  &:hover { background: $orange; border-color: $orange; color: #fff !important; }
+}
+.pill-sm { font-size: .72rem; padding: .15rem .7rem; text-transform: uppercase; letter-spacing: .04em; }
+.pill-outline { background: transparent; color: $navy !important; }
+
+details { margin-top: .4rem; }
+details > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: .72rem;
+  padding: .15rem .7rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  &::-webkit-details-marker { display: none; }
+  &::before { content: "▸ "; display: inline-block; transition: transform .2s; }
+}
+details[open] > summary { background: $orange; border-color: $orange; }
+details[open] > summary::before { transform: rotate(90deg); }
+details > *:not(summary) {
+  margin-top: .7rem;
+  font-size: .95rem;
+  border-left: 3px solid $teal;
+  padding-left: 1rem;
+}
+
+/* ---------- content sections ---------- */
+.page-section {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.6rem 1rem;
+  & + .page-section { border-top: 1px solid rgba($navy, .12); }
+  h2 {
+    font-size: clamp(2.2rem, 4vw, 2.7rem);
+    letter-spacing: -0.015em;
+    border: none;
+    margin: 2.2rem 0 1.3rem;
+    &:first-child, &:first-of-type { margin-top: 0; }
+  }
+}
+
+.paper {
+  margin-bottom: 1.9rem;
+  h3 {
+    font-family: $font-family-sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0 0 .15rem;
+    color: $ink;
+    a { text-decoration: none; color: $navy; &:hover { color: $orange; } }
+  }
+  > p { font-size: .95rem; margin-bottom: .35rem; }
+  .coauthors { font-size: .85rem; color: rgba($ink, .75); }
+  .pill { margin-right: .3rem; }
+}
+
+.teaching ul { padding-left: 1.1rem; }
+
+.refs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  .ref {
+    background: rgba($teal, .35);
+    border-left: 3px solid $orange;
+    padding: .9rem 1.1rem;
+    font-size: .93rem;
+    p { margin: 0; }
+  }
+}
+.placement { font-size: .93rem; margin-bottom: 4rem; }
+
+/* ---------- footer: teal bar, orange icons ---------- */
+footer.footer { border: none; background: $teal; margin-top: 3rem; }
+.nav-footer {
+  background: $teal;
+  border: none;
+  padding: .8rem 1.6rem;
+  font-size: .8rem;
+  .nav-link, a { color: $orange !important; text-decoration: none; }
+  .bi { font-size: 1.35rem; }
+  .footer-items .nav-item { padding: 0 .35rem 0 0; }
+}
+.nav-footer-right { color: $navy; }
+
+.publication { display: block; font-size: .88rem; font-style: italic; color: rgba($ink, .8); }
+
+.presented {
+  display: block;
+  font-size: .85rem;
+  color: rgba($ink, .75);
+  margin-top: .15rem;
+  strong { color: $navy; font-weight: 500; }
+}
+
+/* ---------- CV section: dates on the left, entries on the right ---------- */
+#cv h3 {
+  font-family: "Platypi", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: $orange;
+  margin: 2rem 0 .9rem;
+}
+.cv-list { margin-bottom: 1rem; }
+.cv-entry > p {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  column-gap: 1.2rem;
+  margin: 0;
+  padding: .7rem 0;
+  border-top: 1px solid rgba($navy, .1);
+  font-size: .95rem;
+  line-height: 1.55;
+}
+.cv-date {
+  color: $navy;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.cv-detail {
+  display: block;
+  font-size: .85rem;
+  color: rgba($ink, .72);
+  margin-top: .15rem;
+}
+@media (max-width: 600px) {
+  .cv-entry > p { grid-template-columns: 1fr; }
+  .cv-date { font-size: .85rem; }
+}

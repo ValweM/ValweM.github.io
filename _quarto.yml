@@ -1,0 +1,47 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - files/
+    - images/
+
+website:
+  title: "Max Weinig"                # shown in orange, top-left of the navbar
+  site-url: "https://ValweM.github.io"
+  description: "Personal Website of Max Weinig"
+  # favicon: images/favicon.png   # uncomment after adding the file
+  page-navigation: false
+  navbar:
+    right:
+      - href: index.qmd#about
+        text: about
+      - href: index.qmd#research
+        text: research
+      - href: index.qmd#teaching
+        text: teaching
+      - href: index.qmd#cv
+        text: cv
+  page-footer:
+    left:
+      - icon: envelope-fill
+        href: "mailto:max.weinig@uni-hamburg.de"
+        aria-label: Email
+      - icon: mortarboard-fill
+        href: "https://scholar.google.de/citations?user=-lHRY20AAAAJ&hl=de&oi=ao"
+        aria-label: Google Scholar
+      - icon: github
+        href: "https://github.com/ValweM"
+        aria-label: GitHub
+      - icon: linkedin
+        href: "https://linkedin.com/in/max-we"
+        aria-label: LinkedIn
+    right: "© 2026 Max Weinig"
+
+format:
+  html:
+    theme: [cosmo, styles.scss]
+    page-layout: custom
+    toc: false
+    anchor-sections: false
+    smooth-scroll: true
+    link-external-newwindow: true

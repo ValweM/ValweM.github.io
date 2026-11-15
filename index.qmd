@@ -1,0 +1,186 @@
+---
+pagetitle: "Max Weinig"
+---
+
+<!-- ================= HERO: info on the left, photo on the right ================= -->
+
+::: {#about .hero}
+::: {.hero-text}
+<h1 class="hero-name">Max Weinig</h1>
+
+::: {.meta}
+<p><i class="bi bi-search"></i> <strong>Macroeconomics</strong>, Narrative Economics, Expectation Formation, Natural Language Processing</p>
+<p><i class="bi bi-envelope"></i> max.weinig@uni-hamburg.de</p>
+<p><i class="bi bi-building"></i> Research Associate, Department of Socioeconomics, University of Hamburg</p>
+:::
+
+I am a Research Associate and PhD candidate in economics at University of Hamburg and was a PhD intern at the Bank of England. My research lies at the intersection of narrative economics and expectations. 
+
+:::
+
+<div class="hero-photo" style="background-image: url('images/profile.jpg');" role="img" aria-label="Photo of Max Weinig"></div>
+:::
+
+<!-- ================= RESEARCH ================= -->
+
+::: {#research .page-section}
+
+
+## Publications
+
+::: {.paper}
+### [From Variance to Invariance: Qualitative Content Analysis for Narrative Graph Annotation](https://aclanthology.org/2026.lrec-1.74/)
+[Published in Proceedings of the Fifteenth Language Resources and Evaluation Conference 2026]{.publication}
+[with [Junbo Huang](https://scholar.google.de/citations?user=pFeX_y8AAAAJ&hl=de), [Ulrich Fritsche](https://sites.google.com/site/ulrichfritsche/), [Ricardo Usbeck](https://scholar.google.de/citations?user=3YZb0hUAAAAJ&hl=de)]{.coauthors}\
+[**Presented at:** Fifteenth Language Resources and Evaluation Conference 2026, 2nd DIW Berlin – DIW FES UW Ph.D. Summer School in Economics]{.presented}
+<details>
+<summary>Abstract</summary>
+
+Narratives in news discourse play a critical role in shaping public understanding of economic events, such as inflation. Annotating and evaluating these narratives in a structured manner remains a key challenge for Natural Language Processing (NLP). In this work, we introduce a narrative graph annotation framework that integrates principles from qualitative content analysis (QCA) to enhance methodological consistency. We present a dataset of inflation narratives annotated as directed acyclic graphs (DAGs), where nodes represent events and edges encode causal relations. To evaluate annotation quality, we employed a 6×3 factorial experimental design to examine the effects of narrative representation (six levels) and distance metric type (three levels) on inter-annotator agreement (Krippendorff’s 𝛼), capturing the presence of human label variation (HLV) in narrative interpretations. Our analysis shows that (1) lenient metrics (overlap-based distance) overestimate reliability; (2) locally-constrained representations (e.g., one-hop neighbors) reduce annotation variability. Our annotation and implementation of graph-based Krippendorff’s 𝛼 are open-sourced. The annotation framework and evaluation results provide practical guidance for NLP research on graph-based narrative annotation.
+
+</details>
+:::
+
+
+
+## Working Papers
+
+::: {.paper}
+### [Beyond Salience: Media Inflation Narratives and Household Inflation Expectations](files/Beyond_Salience.pdf)
+[with [Ulrich Fritsche](https://sites.google.com/site/ulrichfritsche/)]{.coauthors}\
+[**Presented at:** 1st Edition of Frontiers of Causal Inference and Machine Learning, 26th International Conference on Computational Statistics (COMPSTAT), 28th International Conference on Macroeconomic Analysis and International Finance (ICMAIF), 1st NEAR Conference, 27th Forum for Macroeconomics and Macroeconomic Policies Conference, KOF Research Seminar, University of Gießen Economics Research Seminar]{.presented}
+
+<details>
+<summary>Abstract</summary>
+
+This paper studies inflation narratives in a large corpus of Wall Street Journal articles from 2018 to 2023, distinguishing between their salience and their content. Granger causality tests indicate that narratives help predict household inflation expectations and other macroeconomic variables. Building on the literature on imperfect information, we exploit the panel dimension of the University of Michigan Surveys of Consumers to measure households’ attention to news about rising prices. We document a substantial increase in the share of attentive households over the sample period. Interacting attention with narrative salience and content, we find that news-attentive households report higher inflation expectations, particularly when coverage signals rising inflation. Supply-side narratives partially offset this pattern: a one-standard-deviation increase in supply-side narratives is associated with inflation expectations that are about 0.5 to 0.6 percentage points lower among attentive than among non-attentive households. Taken together, our findings highlight the role of both the salience and the content of inflation news in shaping household inflation expectations.
+
+</details>
+:::
+
+::: {.paper}
+### [The Stories People Tell: Households’ Inflation Narratives and the Media](https://www2.gwu.edu/~forcpgm/2026-014.pdf)
+[with Samuel Drößler, [Ulrich Fritsche](https://sites.google.com/site/ulrichfritsche/), and [Junbo Huang](https://www2.gwu.edu/~huangj3/)]{.coauthors}\
+[**Presented at:** Kiel–Hamburg Joint Research Seminar (Scheduled), 57th Annual Conference of the Money Macro Finance Society, Bank of England Research Seminar, 30th Forum for Macroeconomics and Macroeconomic Policies Conference, Statistisch-Ökonometrisches Seminar Kiel, RSE Day 2026]{.presented}
+
+<details>
+<summary>abstract</summary>
+
+This paper studies the causal stories people tell about the 2022–2023 inflation surge and tests experimentally whether real-world news narratives shift their inflation expectations and preferred inflation rate. Using a representative survey of over 4,000 German households, we elicit open-ended inflation narratives and represent them as directed acyclic graphs (DAGs) via fine-tuned large language models. We find that German households overwhelmingly interpret the inflation episode through supply-side channels and the war in Ukraine, while demand-side explanations remain comparatively rare. Beyond these aggregate patterns, inflation narratives systematically vary by financial literacy, personal economic experience, and institutional trust. Narrative structure and content correlate with inflation beliefs: supply-side narratives are associated with lower inflation expectations, whereas narratives emphasizing government action or corporate price gouging correspond to higher expectations and lower target inflation rates. A preregistered randomized information provision experiment using real-world newspaper excerpts demonstrates that exposure to news narratives significantly impacts qualitative inflation expectations, whereas quantitative expectations show greater rigidity. However, narrative exposure significantly reduces reliance on prior inflation perceptions, with treatment effects exhibiting mild heterogeneity across levels of financial literacy and prior inflation experience.
+
+</details>
+:::
+
+::: {.paper}
+### [Closing the Partisan Gap? Media Narratives and Policy Preferences Under High Inflation](https://www.econstor.eu/bitstream/10419/343786/1/vfs-2026-pid-152061.pdf)
+[with [Victoria Hünewaldt](https://scholar.google.de/citations?user=dH6WgykAAAAJ&hl=de&oi=ao)]{.coauthors}\
+[**Presented at:** VfS-Jahrestagung 2026, 82nd Annual Congress of the International Institute of Public Finance, SASE 2026 Conference, Ludwig Erhard ifo Conference on Institutional Economics 2026, London Inequality Network, Kiel-Institute Research Seminar]{.presented}
+
+<details>
+<summary>abstract</summary>
+
+We study how newspaper narratives shape public beliefs and policy preferences during a period of high inflation in Germany 2021–2023. We conducted an online survey experiment with a broadly representative sample of 4,150 respondents, half of them randomly assigned to one of three inflation narrative treatments: 1) pent-up demand, 2) the energy-price crisis, or 3) corporate price gouging. We find strong baseline political polarization in support for inflation-mitigating policies, while respondents broadly agree on the distributional consequences of inflation. Pre-existing individual causal attributions about inflation correlate with inflation inequality beliefs and policy preferences but prove largely resistant to experimental updating, on average. Among right-leaning respondents, however, exposure to inflation narratives substantially increases support for redistributive and regulatory policies, reducing the baseline partisan gap by up to 80%. This effect is concentrated among respondents on the moderate right who identify with the AfD and exhibit low trust in government, suggesting that, when confronted with inflation as an economic problem, government skepticism is channeled into demand for stronger state protection.
+
+</details>
+:::
+
+## Work in Progress
+
+::: {.paper}
+### Inflation Narratives and Monetary Policy Transmission
+[Single-author]{.coauthors}
+
+
+:::
+
+::: {.paper}
+### Mortgage Resets, News, and Household Attention
+[with [Vedanta Dhamija](https://sites.google.com/view/vedantadhamija/home), [Roshni Tara](https://sites.google.com/view/roshnitara)]{.coauthors}
+:::
+
+:::
+
+
+<!-- ================= TEACHING ================= -->
+
+::: {#teaching .page-section}
+
+## Teaching
+
+::: {.teaching}
+**Lectures and Seminars**
+
+- *Interdisciplinary Foundation Course* (B.A. Socioeconomics) 
+- *Advanced Econometrics* (M.Sc. Innovation, Business and Sustainability) 
+
+**Tutorials**
+
+- *Introductory Economics* (B.A. Socioeconomics) 
+- *Econometrics I* (B.A. Socioeconomics) 
+- *Econometrics II* (B.A. Socioeconomics)  
+- *Data Science for Socioeconomists* (B.A. Socioeconomics) 
+- *Advanced Quantitative Methods* (M.A. Labor, Economics and Society) 
+
+:::
+
+:::
+
+<!-- ================= CV ================= -->
+
+::: {#cv .page-section}
+
+## CV
+
+### Education
+::: {.cv-list}
+::: {.cv-entry}
+[since 03/2023]{.cv-date}
+[**Doctoral Student in Economics**, University of Hamburg (expected 08/2027) [Supervisor: Prof. Dr. Ulrich Fritsche, Professor of Economics, esp. Applied Economics, Department of Socioeconomics]{.cv-detail} [Research interests: Narrative Economics, Expectations, Text-as-Data, Open-Ended Survey Designs]{.cv-detail}]{.cv-what}
+:::
+
+::: {.cv-entry}
+[10/2019 – 09/2022]{.cv-date}
+[**M.A. in Labor, Economics and Society** (Economic and Sociological Studies), Major in Economics, University of Hamburg]{.cv-what}
+:::
+
+::: {.cv-entry}
+[10/2014 – 08/2018]{.cv-date}
+[**B.A. in Economics, Law and Social Sciences**, Major in Economics, University of Erfurt]{.cv-what}
+:::
+:::
+
+### Work experience
+
+::: {.cv-list}
+::: {.cv-entry}
+[since 10/2022]{.cv-date}
+[**Research Associate**, Chair of Prof. Dr. Ulrich Fritsche, Department of Socioeconomics, University of Hamburg]{.cv-what}
+:::
+
+::: {.cv-entry}
+[07/2026 – 10/2026]{.cv-date}
+[**PhD Intern**, Monetary Policy and Strategy Division, Bank of England [Supervisor: Vedanta Dhamija]{.cv-detail}]{.cv-what}
+:::
+
+::: {.cv-entry}
+[07/2023 – 06/2026]{.cv-date}
+[**Research Associate**, project "Inflation Narratives in Large Text Corpora," led by Prof. Dr. Ulrich Fritsche and Prof. Dr. Ricardo Usbeck [Funded by the Federal Ministry of Education and Research (BMBF) and the Free and Hanseatic City of Hamburg under the Excellence Strategy of the Federal Government and the Länder]{.cv-detail}]{.cv-what}
+:::
+
+::: {.cv-entry}
+[12/2020 – 09/2022]{.cv-date}
+[**Student Research Assistant**, Chair of Prof. Dr. Ulrich Fritsche, Department of Socioeconomics, University of Hamburg]{.cv-what}
+:::
+
+::: {.cv-entry}
+[01/2021 – 12/2021]{.cv-date}
+[**Student Assistant**, Chair of Prof. Dr. Henning Lohmann (Sociology, esp. Social Research), Department of Socioeconomics, University of Hamburg]{.cv-what}
+:::
+
+::: {.cv-entry}
+[11/2019 – 01/2021]{.cv-date}
+[**Student Research Assistant**, Gambling Research group of Dr. Ingo Fiedler, Department of Socioeconomics, University of Hamburg]{.cv-what}
+:::
+:::
+
+:::
