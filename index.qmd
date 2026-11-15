@@ -135,7 +135,7 @@ We study how newspaper narratives shape public beliefs and policy preferences du
 ::: {.cv-list}
 ::: {.cv-entry}
 [since 03/2023]{.cv-date}
-[**Doctoral Student in Economics**, University of Hamburg (expected 08/2027) [Supervisor: Prof. Dr. Ulrich Fritsche, Professor of Economics, esp. Applied Economics, Department of Socioeconomics]{.cv-detail} [Research interests: Narrative Economics, Expectations, Text-as-Data, Open-Ended Survey Designs]{.cv-detail}]{.cv-what}
+[**Doctoral Student in Economics**, University of Hamburg [Supervisor: Prof. Dr. Ulrich Fritsche, Professor of Economics, esp. Applied Economics, Department of Socioeconomics]{.cv-detail} [Research interests: Narrative Economics, Expectations, Text-as-Data, Open-Ended Survey Designs]{.cv-detail}]{.cv-what}
 :::
 
 ::: {.cv-entry}
