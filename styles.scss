@@ -1,14 +1,10 @@
-/*-- scss:defaults --*/
-// A blend of two styles:
-//  - k-wittwer.com: teal / navy / orange palette, light Heebo type, split-screen opening
-//  - chloedemeulenaer.github.io: one-page academic layout, big serif section
-//    headings, dark navbar, small pill buttons that reveal abstracts
+
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&family=Platypi:wght@500;600;700&display=swap');
 
-$teal:   #A8DADC;   // hero panel, footer
-$navy:   #1E3E62;   // navbar, headings, links, pills
-$ink:    #26313d;   // body text
-$orange: #FF6500;   // name, accents, icons
+$teal:   #DDE9E3;   // hero panel, footer
+$navy:   #123A33;   // navbar, headings, links, pills
+$ink:    #1f2d2a;   // body text
+$orange: #B8700F;   // name, accents, icons
 $paper:  #ffffff;   // page background below the hero
 
 $body-bg: $paper;
