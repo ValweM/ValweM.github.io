@@ -1,12 +1,19 @@
-
+/*-- scss:defaults --*/
+// Theme: "ink and saffron"
+// Layout: one-page academic site with a split opening screen (text left, framed photo right),
+// serif section headings, pill buttons, and a CV section with dates on the left.
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&family=Platypi:wght@500;600;700&display=swap');
 
-$teal:   #DDE9E3;   // hero panel, footer
-$navy:   #123A33;   // navbar, headings, links, pills
-$ink:    #1f2d2a;   // body text
-$orange: #B8700F;   // name, accents, icons
-$paper:  #ffffff;   // page background below the hero
+// ---------- colours: change these to recolour the whole site ----------
+$teal:    #F6D78B;   // hero panel (warm sand)
+$navy:    #1B1F3B;   // navbar, footer, headings, pills (ink)
+$ink:     #23263a;   // body text
+$orange:  #E8590C;   // accents: dot, line, icons, underlines, CV headings (burnt orange)
+$aqua:    #9CCFD5;   // block behind the photo
+$saffron: #F2B630;   // name in the navbar, footer icons
+$paper:   #ffffff;   // page background below the hero
 
+// ---------- Bootstrap / Quarto settings ----------
 $body-bg: $paper;
 $body-color: $ink;
 $primary: $navy;
@@ -18,9 +25,9 @@ $headings-color: $navy;
 $font-weight-base: 300;
 $navbar-bg: $navy;
 $navbar-fg: #ffffff;
-$navbar-hl: $orange;
-$footer-bg: $teal;
-$footer-fg: $navy;
+$navbar-hl: $saffron;
+$footer-bg: $navy;
+$footer-fg: #ffffff;
 
 /*-- scss:rules --*/
 body { font-size: 1.05rem; line-height: 1.7; font-weight: 300; }
@@ -34,8 +41,8 @@ a {
   &:hover { color: $orange; }
 }
 
-/* ---------- navbar: dark bar, name in orange, lowercase links ---------- */
-#quarto-header.headroom--unpinned { transform: none !important; }
+/* ---------- navbar: ink bar, name in saffron, lowercase links ---------- */
+#quarto-header.headroom--unpinned { transform: none !important; }   // keep the navbar visible while scrolling
 .navbar {
   background: $navy;
   box-shadow: none;
@@ -45,7 +52,7 @@ a {
     font-family: "Platypi", Georgia, serif;
     font-weight: 600;
     font-size: 1.45rem;
-    color: $orange !important;
+    color: $saffron !important;
     text-decoration: none;
   }
   .nav-link {
@@ -54,7 +61,7 @@ a {
     color: #fff !important;
     text-decoration: none;
     padding: .2rem .7rem !important;
-    &:hover { color: $orange !important; }
+    &:hover { color: $saffron !important; }
   }
   .navbar-toggler { border: none; color: #fff; }
 }
@@ -64,15 +71,17 @@ a {
 main.content { max-width: none; margin: 0; padding: 0; }
 .page-section, #about { scroll-margin-top: 4.5rem; }
 
-/* ---------- hero: teal info panel + black-and-white photo ---------- */
+/* ---------- hero: sand info panel + framed photo on an aqua block ---------- */
 .hero {
   display: grid;
   grid-template-columns: 1fr;
   background: $teal;
+  border-bottom: 6px solid $orange;            // thin accent line under the opening screen
 }
 .hero-photo {
-  order: -1;            // photo on top on phones
+  order: -1;                                   // photo on top on phones
   min-height: 45vh;
+  background-color: $aqua;
   background-size: cover;
   background-position: center 25%;
 }
@@ -85,8 +94,11 @@ main.content { max-width: none; margin: 0; padding: 0; }
     font-weight: 600;
     letter-spacing: -0.015em;
     line-height: 1.02;
-    color: $orange;
+    color: $navy;
     margin: 0 0 1.2rem;
+    display: flex;                             // keeps the full stop tight against the name
+    align-items: last baseline;
+    &::after { content: "."; color: $orange; } // signature full stop; delete this line to remove it
   }
   .meta {
     margin-bottom: 1.5rem;
@@ -100,16 +112,19 @@ main.content { max-width: none; margin: 0; padding: 0; }
     margin-top: 1.2rem;
   }
 }
+
 @media (min-width: 992px) {
   .hero {
-    grid-template-columns: 3fr 2fr;            // photo takes 40% of the width (was 1fr 1fr = 50%)
+    grid-template-columns: 3fr 2fr;            // photo column = 40% of the width
     min-height: calc(100vh - 3.6rem);
+    // sand on the left, aqua block behind the photo; keep 60% in line with 3fr 2fr
+    background: linear-gradient(to right, $teal 60%, $aqua 60%);
   }
   .hero-text {
     order: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;   // name sits low, like the k-wittwer opening
+    justify-content: flex-end;                 // name sits low on the panel
     padding: 3rem 4rem 4.5rem;
   }
   .hero-photo {
@@ -117,12 +132,13 @@ main.content { max-width: none; margin: 0; padding: 0; }
     align-self: center;                        // centre the photo vertically
     height: 75vh;                              // photo height; lower = smaller
     min-height: 0;
-    margin: 0 3.5rem 0 0;                      // teal space on the right
-    border-radius: 8px;                        // rounded corners
-    box-shadow: 0 12px 30px rgba(30, 62, 98, .18);   // soft shadow for a framed look
+    margin: 0 3.5rem;                          // aqua space on both sides
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba($navy, .18);
   }
 }
-/* ---------- pills (cv download, paper links, abstract toggles) ---------- */
+
+/* ---------- pills (paper links, abstract toggles) ---------- */
 .pill, details > summary {
   display: inline-block;
   font-family: $font-family-sans-serif;
@@ -192,37 +208,12 @@ details > *:not(summary) {
   .pill { margin-right: .3rem; }
 }
 
-.teaching ul { padding-left: 1.1rem; }
-
-.refs {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-  gap: 1.2rem;
-  margin-bottom: 1.5rem;
-  .ref {
-    background: rgba($teal, .35);
-    border-left: 3px solid $orange;
-    padding: .9rem 1.1rem;
-    font-size: .93rem;
-    p { margin: 0; }
-  }
+.publication {
+  display: block;
+  font-size: .88rem;
+  font-style: italic;
+  color: rgba($ink, .8);
 }
-.placement { font-size: .93rem; margin-bottom: 4rem; }
-
-/* ---------- footer: teal bar, orange icons ---------- */
-footer.footer { border: none; background: $teal; margin-top: 3rem; }
-.nav-footer {
-  background: $teal;
-  border: none;
-  padding: .8rem 1.6rem;
-  font-size: .8rem;
-  .nav-link, a { color: $orange !important; text-decoration: none; }
-  .bi { font-size: 1.35rem; }
-  .footer-items .nav-item { padding: 0 .35rem 0 0; }
-}
-.nav-footer-right { color: $navy; }
-
-.publication { display: block; font-size: .88rem; font-style: italic; color: rgba($ink, .8); }
 
 .presented {
   display: block;
@@ -231,6 +222,23 @@ footer.footer { border: none; background: $teal; margin-top: 3rem; }
   margin-top: .15rem;
   strong { color: $navy; font-weight: 500; }
 }
+
+.teaching ul { padding-left: 1.1rem; }
+
+.refs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  .ref {
+    background: rgba($aqua, .3);
+    border-left: 3px solid $orange;
+    padding: .9rem 1.1rem;
+    font-size: .93rem;
+    p { margin: 0; }
+  }
+}
+.placement { font-size: .93rem; margin-bottom: 4rem; }
 
 /* ---------- CV section: dates on the left, entries on the right ---------- */
 #cv h3 {
@@ -267,3 +275,17 @@ footer.footer { border: none; background: $teal; margin-top: 3rem; }
   .cv-entry > p { grid-template-columns: 1fr; }
   .cv-date { font-size: .85rem; }
 }
+
+/* ---------- footer: ink bar, saffron icons ---------- */
+footer.footer { border: none; background: $navy; margin-top: 3rem; }
+.nav-footer {
+  background: $navy;
+  border: none;
+  padding: .8rem 1.6rem;
+  font-size: .8rem;
+  .nav-link, a { color: $saffron !important; text-decoration: none; }
+  .nav-link:hover, a:hover { color: #fff !important; }
+  .bi { font-size: 1.35rem; }
+  .footer-items .nav-item { padding: 0 .35rem 0 0; }
+}
+.nav-footer-right { color: #fff; }
