@@ -96,9 +96,6 @@ main.content { max-width: none; margin: 0; padding: 0; }
     line-height: 1.02;
     color: $navy;
     margin: 0 0 1.2rem;
-    display: flex;                             // keeps the full stop tight against the name
-    align-items: last baseline;
-    &::after { content: "."; color: $orange; } // signature full stop; delete this line to remove it
   }
   .meta {
     margin-bottom: 1.5rem;
